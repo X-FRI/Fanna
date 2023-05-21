@@ -15,3 +15,16 @@ type LuaValue =
     | LUA_TFUNCTION
     | LUA_TUSERDATA
     | LUA_TTHREAD
+
+    override this.ToString() = 
+        match this with
+        | LUA_TNONE -> "LUA_TNONE"
+        | LUA_TNIL -> "LUA_TNIL"
+        | LUA_TBOOLEAN -> "LUA_TBOOLEAN"
+        | LUA_TLIGHTUSERDATA -> "LUA_TLIGHTUSERDATA"
+        | LUA_TNUMBER -> "LUA_TNUMBER"
+        | LUA_TSTRING -> "LUA_TSTRING"
+        | LUA_TTABLE -> "LUA_TTABLE"
+        | LUA_TFUNCTION -> "LUA_TFUNCTION"
+        | LUA_TUSERDATA -> "LUA_TUSERDATA"
+        | LUA_TTHREAD -> "LUA_TTHREAD"

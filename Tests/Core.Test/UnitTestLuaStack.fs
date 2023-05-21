@@ -16,14 +16,14 @@ type TestLuaStack() =
         with :? System.ArgumentOutOfRangeException ->
             Assert.Pass()
 
-        Assert.AreEqual(0, stack.Length)
+        Assert.AreEqual(0, stack.Top)
 
     [<Test>]
     static member ``LuaStack.Push``() =
         let stack = LuaStack(1)
         stack.Push(LUA_TNIL)
 
-        Assert.AreEqual(1, stack.Length)
+        Assert.AreEqual(1, stack.Top)
         Assert.AreEqual(LUA_TNIL, stack.Pop())
 
 
@@ -31,9 +31,9 @@ type TestLuaStack() =
     static member ``LuaStack.Length``() =
         let stack = LuaStack(1)
         stack.Push(LUA_TNIL)
-        printfn $"{stack.Length}"
+        printfn $"{stack.Top}"
 
-        Assert.AreEqual(1, stack.Length)
+        Assert.AreEqual(1, stack.Top)
 
     [<Test>]
     static member ``LuaStack.Get``() =

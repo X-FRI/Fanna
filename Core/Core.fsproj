@@ -11,5 +11,6 @@
     <Compile Include="Chunk.fs" />
     <Compile Include="LuaValue.fs" />
     <Compile Include="LuaStack.fs" />
+    <Compile Include="LuaState.fs" />
   </ItemGroup>
 </Project>
